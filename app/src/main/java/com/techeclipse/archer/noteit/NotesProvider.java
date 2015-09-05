@@ -36,7 +36,7 @@ public class NotesProvider extends ContentProvider {
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         return database.query(DBOpenHelper.TABLE_NOTES, DBOpenHelper.ALL_COLUMNS,
                 selection, null, null, null,
-                DBOpenHelper.NOTES_CREATED + "DESC");
+                DBOpenHelper.NOTES_CREATED + " DESC");
     }
 
     @Override
