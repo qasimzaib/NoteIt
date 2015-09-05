@@ -27,6 +27,15 @@
             android:name="com.techeclipse.archer.noteit.NotesProvider"
             android:authorities="com.techeclipse.archer.noteit.notesprovider"
             android:exported="false" />
+
+        <activity
+            android:name="com.techeclipse.archer.noteit.EditorActivity"
+            android:label="@string/title_activity_editor"
+            android:parentActivityName="com.techeclipse.archer.noteit.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.techeclipse.archer.noteit.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

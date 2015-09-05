@@ -9,6 +9,13 @@
         <dex dex="D:\Software\Android\Projects\NoteIt\app\build\intermediates\pre-dexed\debug\classes-6f4c7af8821285b4c9f2d0296aa0cf4dbc0bdea8.jar" />
     </item>
     <item
+        jar="D:\Software\Android\Projects\NoteIt\app\build\intermediates\exploded-aar\com.github.markushi\circlebutton\1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="ebe3b1f14fa79ba3cd1588acda4e6517ee9fe611">
+        <dex dex="D:\Software\Android\Projects\NoteIt\app\build\intermediates\pre-dexed\debug\classes-13115e5fa39422c21ec128546eed8810aa1927af.jar" />
+    </item>
+    <item
         jar="D:\Software\Android\Projects\NoteIt\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.0"
