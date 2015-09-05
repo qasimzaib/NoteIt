@@ -7,7 +7,6 @@ import android.content.CursorLoader;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.Loader;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,12 +15,13 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
-    private static final int EDITOR_REQUEST_CODE = 100;
+    private static final int EDITOR_REQUEST_CODE = 1001;
     private CursorAdapter cursorAdapter;
 
     @Override
@@ -29,15 +29,25 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        cursorAdapter = new NotesCursorAdapter (this, null, 0);
+        cursorAdapter = new NotesCursorAdapter(this, null, 0);
         ListView list = (ListView) findViewById(android.R.id.list);
         list.setAdapter(cursorAdapter);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent (MainActivity.this, EditorActivity.class);
+                Uri uri = Uri.parse (NotesProvider.CONTENT_URI + "/" + id);
+                intent.putExtra(NotesProvider.CONTENT_ITEM_TYPE, uri);
+                startActivityForResult(intent, EDITOR_REQUEST_CODE);
+            }
+        });
 
         getLoaderManager().initLoader(0, null, this);
     }
 
     private void insertNote(String noteText) {
-        ContentValues values = new ContentValues ();
+        ContentValues values = new ContentValues();
         values.put(DBOpenHelper.NOTES_TEXT, noteText);
         Uri noteUri = getContentResolver().insert(NotesProvider.CONTENT_URI, values);
         Log.d("MainActivity", "Inserted note " + noteUri.getLastPathSegment());
@@ -59,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 insertSampleData();
                 break;
             case R.id.action_delete_all:
-                deleteAllNotes ();
+                deleteAllNotes();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -102,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-        return new CursorLoader (this, NotesProvider.CONTENT_URI, null, null, null, null);
+        return new CursorLoader(this, NotesProvider.CONTENT_URI, null, null, null, null);
     }
 
     @Override

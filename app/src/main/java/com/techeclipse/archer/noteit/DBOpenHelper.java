@@ -5,11 +5,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBOpenHelper extends SQLiteOpenHelper {
-
     private static final String DATABASE_NAME = "NoteIt.db";
     private static final int DATABASE_VERSION = 1;
-
-    //Constants for identifying table and columns
     public static final String TABLE_NOTES = "notes";
     public static final String NOTES_ID = "_id";
     public static final String NOTES_TEXT = "noteText";
@@ -17,7 +14,6 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
     public static final String[] ALL_COLUMNS = {NOTES_ID, NOTES_TEXT, NOTES_CREATED};
 
-    //SQL to create table
     private static final String TABLE_CREATE =
             "CREATE TABLE " + TABLE_NOTES + " (" +
                     NOTES_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +

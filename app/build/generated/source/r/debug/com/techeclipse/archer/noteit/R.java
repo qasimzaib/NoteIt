@@ -1587,8 +1587,9 @@ containing a value of this type.
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f02003c;
         public static final int abc_textfield_search_material=0x7f02003d;
         public static final int ic_action_add=0x7f02003e;
-        public static final int ic_document=0x7f02003f;
-        public static final int notification_template_icon_bg=0x7f020040;
+        public static final int ic_action_delete=0x7f02003f;
+        public static final int ic_document=0x7f020040;
+        public static final int notification_template_icon_bg=0x7f020041;
     }
     public static final class id {
         public static final int action0=0x7f0c0051;
@@ -1601,6 +1602,7 @@ containing a value of this type.
         public static final int action_bar_title=0x7f0c0021;
         public static final int action_context_bar=0x7f0c003f;
         public static final int action_create_sample=0x7f0c005f;
+        public static final int action_delete=0x7f0c005e;
         public static final int action_delete_all=0x7f0c0060;
         public static final int action_divider=0x7f0c0055;
         public static final int action_menu_divider=0x7f0c0002;
@@ -1608,7 +1610,6 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0c003b;
         public static final int action_mode_bar_stub=0x7f0c003a;
         public static final int action_mode_close_button=0x7f0c0023;
-        public static final int action_settings=0x7f0c005e;
         public static final int activity_chooser_view_content=0x7f0c0024;
         public static final int alertTitle=0x7f0c002e;
         public static final int always=0x7f0c001b;
@@ -1762,16 +1763,19 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with=0x7f06000e;
         public static final int abc_shareactionprovider_share_with_application=0x7f06000f;
         public static final int abc_toolbar_collapse_description=0x7f060010;
-        public static final int action_settings=0x7f060012;
-        public static final int all_deleted=0x7f060013;
-        public static final int app_name=0x7f060014;
-        public static final int are_you_sure=0x7f060015;
-        public static final int create_sample_data=0x7f060016;
-        public static final int delete_all_notes=0x7f060017;
-        public static final int hello_world=0x7f060018;
-        public static final int new_note=0x7f060019;
+        public static final int action_delete=0x7f060012;
+        public static final int action_settings=0x7f060013;
+        public static final int all_deleted=0x7f060014;
+        public static final int app_name=0x7f060015;
+        public static final int are_you_sure=0x7f060016;
+        public static final int create_sample_data=0x7f060017;
+        public static final int delete_all_notes=0x7f060018;
+        public static final int hello_world=0x7f060019;
+        public static final int new_note=0x7f06001a;
+        public static final int note_deleted=0x7f06001b;
+        public static final int note_updated=0x7f06001c;
         public static final int status_bar_notification_info_overflow=0x7f060011;
-        public static final int title_activity_editor=0x7f06001a;
+        public static final int title_activity_editor=0x7f06001d;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f08007a;
